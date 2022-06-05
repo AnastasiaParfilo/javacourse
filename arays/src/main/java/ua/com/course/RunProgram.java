@@ -25,24 +25,19 @@ public class RunProgram {
             System.out.println("\nPlease enter the number you want to check -->");
             String line = reader.readLine();
 
-            int array[] = new int [line.length()];
-            int length = array.length;
-
-            for (int i = 0; i < length; i++) {
-                array[i]=line.charAt(i) + 0;
-            }
+            int length = line.length();
 
             boolean flag = true;
             for (int i = 0; i < length / 2; i++) {
-                if (!(array[i] == array[length - 1 - i])) {
+                if (!(line.charAt(i) == line.charAt(length - 1 - i))) {
                     flag = false;
                     break;
                 }
             }
             if (flag) {
-                System.out.println("Number: " + line + " is POLYNOMIAL!!!");
+                System.out.println("Number: " + line + " is PALINDROME!!!");
             } else {
-                System.out.println("Number: " + line + " is NOT polynomial.");
+                System.out.println("Number: " + line + " is NOT palindrome.");
             }
 
             System.out.println("\nIf you want to check number again, please enter 1");
